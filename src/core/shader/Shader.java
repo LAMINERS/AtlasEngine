@@ -142,6 +142,13 @@ public abstract class Shader {
 		GL20.glUniformMatrix4(uniforms.get(uniformName), false, matrixBuffer);
 	}
 	
+	public void loadUniformb(String uniformName, boolean value) {
+		if(value)
+			loadUniformi(uniformName, 1);
+		else
+			loadUniformi(uniformName, 0);
+	}
+	
 	public void bindUniformBlock(String uniformBlockName, int uniformBlockBinding )
 	{
 		GL31.glUniformBlockBinding(program, uniforms.get(uniformBlockName), uniformBlockBinding);

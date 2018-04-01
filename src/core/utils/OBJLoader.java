@@ -93,7 +93,7 @@ public class OBJLoader {
 		float[] verticesArray = new float[vertices.size() * 3];
 		float[] texturesArray = new float[vertices.size() * 2];
 		float[] normalsArray = new float[vertices.size() * 3];
-		float[] tangentsArray = new float[vertices.size() * 3];
+		//float[] tangentsArray = new float[vertices.size() * 3]; //TODO tangentsArray not used
 		int[] indicesArray = convertIndicesListToArray(indices);
 		
 		// Read mtl File
@@ -257,7 +257,8 @@ public class OBJLoader {
 		return indicesArray;
 	}
 	
-	private static float convertDataToArrays(List<Vertex> vertices, List<Vector2f> textures,
+	//TODO No use for convertDataToArrays
+	/*private static float convertDataToArrays(List<Vertex> vertices, List<Vector2f> textures,
 			List<Vector3f> normals, float[] verticesArray, float[] texturesArray,
 			float[] normalsArray, float[] tangentsArray) {
 		float furthestPoint = 0;
@@ -284,7 +285,7 @@ public class OBJLoader {
 
 		}
 		return furthestPoint;
-	}
+	}*/
 
 	private static Vertex dealWithAlreadyProcessedVertex(Vertex previousVertex, int newTextureIndex,
 			int newNormalIndex, List<Integer> indices, List<Vertex> vertices) {
