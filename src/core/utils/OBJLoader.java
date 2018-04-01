@@ -21,6 +21,11 @@ import core.model.Model;
 import core.model.Vertex;
 import core.textures.Texture2D;
 
+/**
+ * Provides functions to read obj and mtl files
+ * @author Lars Bücker
+ *
+ */
 public class OBJLoader {
 
 	private static final String RES_LOC = "res/";
@@ -123,6 +128,9 @@ public class OBJLoader {
 						if (tokens.length > 1){
 							material.setSpecularmap(new Texture2D(RES_LOC + tokens[1]));
 						}
+					}
+					if(tokens[0].equals("NoR")) {
+						material.getDiffusemap().setNumberOfRows(Integer.valueOf(tokens[1]));
 					}
 					if(tokens[0].equals("map_bump")){
 						if (tokens.length > 1){

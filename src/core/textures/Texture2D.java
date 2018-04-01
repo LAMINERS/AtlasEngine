@@ -12,6 +12,8 @@ public class Texture2D {
 	private int width;
 	private int height;
 	
+	private int numberOfRows;
+	
 	public Texture2D() {}
 	
 	public Texture2D(String file) {
@@ -61,5 +63,13 @@ public class Texture2D {
 
 	public int getHeight() {
 		return height;
+	}
+
+	public int getNumberOfRows() {
+		return numberOfRows;
+	}
+
+	public void setNumberOfRows(int numberOfRows) {
+		this.numberOfRows = numberOfRows;
 	}
 }
