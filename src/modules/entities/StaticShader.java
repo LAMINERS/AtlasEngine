@@ -48,6 +48,12 @@ public class StaticShader extends Shader {
 		addUniform("cameraPosition");
 	}
 	
+	public void connectTextureUnits() {
+		loadUniformi("modelTexture", 0);
+		loadUniformi("specularMap", 1);
+		//TODO ShadowMap: 5
+	}
+	
 	public void loadTransformationMatrix(Matrix4f matrix) {
 		loadUniformMatrix4f("transformationMatrix", matrix);
 	}

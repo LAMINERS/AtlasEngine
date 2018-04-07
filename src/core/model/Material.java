@@ -18,7 +18,11 @@ public class Material {
 	private float displaceScale;
 	private float emission;
 	private float shininess;
+	private float shineDamper;
 	private float horizontalScale;
+	
+	private boolean useFakeLighting;
+	
 	public String getName() {
 		return name;
 	}
@@ -91,11 +95,24 @@ public class Material {
 	public void setShininess(float shininess) {
 		this.shininess = shininess;
 	}
+	public float getShineDamper() {
+		return shineDamper;
+	}
+	
+	public void setShineDamper(float shineDamper) {
+		this.shineDamper = shineDamper;
+	}
 	public float getHorizontalScale() {
 		return horizontalScale;
 	}
 	public void setHorizontalScale(float horizontalScale) {
 		this.horizontalScale = horizontalScale;
+	}
+	public boolean isUseFakeLighting() {
+		return useFakeLighting;
+	}
+	public void setUseFakeLighting(boolean useFakeLighting) {
+		this.useFakeLighting = useFakeLighting;
 	}
 	
 	

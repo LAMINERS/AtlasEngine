@@ -34,6 +34,10 @@ public abstract class Shader {
 		GL20.glUseProgram(program);
 	}
 	
+	public void unbind() {
+		GL20.glUseProgram(0);
+	}
+	
 	public void addUniform(String uniform) {
 		
 		int uniformLocation = GL20.glGetUniformLocation(program, uniform);
