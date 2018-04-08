@@ -6,6 +6,8 @@ import org.lwjgl.util.vector.Matrix4f;
 import org.lwjgl.util.vector.Vector2f;
 import org.lwjgl.util.vector.Vector3f;
 
+import core.kernel.Camera;
+import core.math.Maths;
 import core.shader.Shader;
 import core.utils.Constants;
 import core.utils.ResourceLoader;
@@ -107,6 +109,11 @@ public class StaticShader extends Shader {
 	
 	public void loadUseSpecularMap(boolean useSpecularmap) {
 		loadUniformb("useSpecularMap", useSpecularmap);
+	}
+
+	public void loadViewMatrix(Camera camera) {
+		Matrix4f viewMatrix = Maths.createViewMatrix(camera);
+		loadUniformMatrix4f("viewMatrix", viewMatrix);
 	}
 	
 }
