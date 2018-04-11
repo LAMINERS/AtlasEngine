@@ -8,6 +8,7 @@ public class Constants {
 	public static final float FOV = 70f;
 	
 	public static final int MAX_LIGHTS = 4;
+	public static final int MAX_TERRAIN_MAT = 4;
 
 	public static final int FPS_CAP = 144;
 }
