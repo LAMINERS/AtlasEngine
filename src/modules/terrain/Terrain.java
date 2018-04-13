@@ -8,7 +8,7 @@ import javax.imageio.ImageIO;
 
 import org.lwjgl.util.vector.Vector3f;
 
-import core.model.Material;
+import core.model.MaterialPack;
 import core.model.Mesh;
 import core.utils.OBJLoader;
 
@@ -21,7 +21,7 @@ public class Terrain {
 	private float x;
 	private float z;
 	private Mesh mesh;
-	private Material material;
+	private MaterialPack materialPack;
 	
 	private float[][] heights;
 
@@ -29,10 +29,10 @@ public class Terrain {
 		return SIZE;
 	}
 	
-	public Terrain(float x, float z, Material material, String heightmapFile) {
+	public Terrain(float x, float z, MaterialPack materialPack, String heightmapFile) {
 		this.x = x;
 		this.z = z;
-		this.material = material;
+		this.materialPack = materialPack;
 		this.mesh = generateTerrain(heightmapFile);
 	}
 	
@@ -48,8 +48,8 @@ public class Terrain {
 		return mesh;
 	}
 
-	public Material getMaterial() {
-		return material;
+	public MaterialPack getMaterialPack() {
+		return materialPack;
 	}
 
 	private Mesh generateTerrain(String heightmap) {
